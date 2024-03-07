@@ -12,3 +12,10 @@
  *
  * Your goal should be to have your queries remain correct even if the data in the database changes arbitrarily.
  */
+
+SELECT count(customer_id)
+FROM customer
+JOIN address using (address_id)
+JOIN city using (city_id)
+JOIN country using (country_id)
+WHERE country != 'United States';
